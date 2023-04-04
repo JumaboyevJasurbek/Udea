@@ -1,0 +1,14 @@
+import { Module } from '@nestjs/common';
+import { DescriptionService } from './description.service';
+import { DescriptionController } from './description.controller';
+import { TypeOrmModule } from '@nestjs/typeorm';
+import { Description } from 'src/entities/description.entity';
+
+@Module({
+  imports: [
+    TypeOrmModule.forFeature([Description]),
+    ],
+  controllers: [DescriptionController],
+  providers: [DescriptionService]
+})
+export class DescriptionModule {}
