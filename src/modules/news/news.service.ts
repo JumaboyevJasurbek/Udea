@@ -13,22 +13,22 @@ export class NewsService {
   ) {}
 
   create(createNewsDto: CreateNewsDto) {
-    return this.repository.save(createNewsDto)
+    return this.repository.save(createNewsDto);
   }
 
   findAll() {
-    return this.repository.find()
+    return this.repository.find();
   }
 
   findOne(id: string) {
-    return this.repository.findOneBy({ id })
+    return this.repository.findOneBy({ id });
   }
 
   update(id: string, updateNewsDto: UpdateNewsDto) {
-    return this.repository.update(id, updateNewsDto)
+    return this.repository.update(id, updateNewsDto);
   }
 
   remove(id: string) {
-    return this.repository.delete(id)
+    return this.repository.delete(id);
   }
 }

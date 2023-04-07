@@ -21,7 +21,7 @@ export class DescriptionService {
   }
 
   findOne(id: string) {
-    return this.repository.findOneBy({id});
+    return this.repository.findOneBy({ id });
   }
 
   update(id: string, updateDescriptionDto: UpdateDescriptionDto) {

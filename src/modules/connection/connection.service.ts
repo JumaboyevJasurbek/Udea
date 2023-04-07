@@ -20,7 +20,7 @@ export class ConnectionService {
   }
 
   findOne(id: string) {
-    return this.conRepository.findOneBy({id});
+    return this.conRepository.findOneBy({ id });
   }
 
   update(id: string, updateConnectionDto: UpdateConnectionDto) {

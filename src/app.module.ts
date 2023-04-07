@@ -14,7 +14,7 @@ import { config } from './config';
     TypeOrmModule.forRoot(connectDb),
     EventsModule,
     NewsModule,
-    ConnectionModule, 
+    ConnectionModule,
     DescriptionModule,
   ],
 })

@@ -5,10 +5,8 @@ import { TypeOrmModule } from '@nestjs/typeorm';
 import { Description } from 'src/entities/description.entity';
 
 @Module({
-  imports: [
-    TypeOrmModule.forFeature([Description]),
-    ],
+  imports: [TypeOrmModule.forFeature([Description])],
   controllers: [DescriptionController],
-  providers: [DescriptionService]
+  providers: [DescriptionService],
 })
 export class DescriptionModule {}
