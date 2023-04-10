@@ -23,7 +23,7 @@ export class NewsController {
   @HttpCode(HttpStatus.CREATED)
   @ApiBody({
     schema: {
-      type: 'Object',
+      type: 'object',
       properties: {
         category_uz: {
           type: 'string',
@@ -100,7 +100,7 @@ export class NewsController {
   @HttpCode(HttpStatus.NO_CONTENT)
   @ApiBody({
     schema: {
-      type: 'Object',
+      type: 'object',
       properties: {
         category_uz: {
           type: 'string',

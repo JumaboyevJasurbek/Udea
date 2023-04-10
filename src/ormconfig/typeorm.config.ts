@@ -4,13 +4,12 @@ dotenv.config();
 
 export const connectDb: TypeOrmModuleOptions = {
   type: 'postgres',
-  host: "localhost",
+  host: 'localhost',
   port: 5432,
-  password: "DJ9USbp%iLou", 
-  username: "postgres",
-  database: "udea",
-  entities: [
-  ],
+  password: 'DJ9USbp%iLou',
+  username: 'postgres',
+  database: 'udea',
+  entities: [],
   autoLoadEntities: true,
   synchronize: true,
 };

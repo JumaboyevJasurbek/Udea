@@ -23,7 +23,7 @@ export class EventsController {
   @HttpCode(HttpStatus.CREATED)
   @ApiBody({
     schema: {
-      type: 'Object',
+      type: 'object',
       properties: {
         title_uz: {
           type: 'string',
@@ -85,7 +85,7 @@ export class EventsController {
   @HttpCode(HttpStatus.NO_CONTENT)
   @ApiBody({
     schema: {
-      type: 'Object',
+      type: 'object',
       properties: {
         title_uz: {
           type: 'string',
