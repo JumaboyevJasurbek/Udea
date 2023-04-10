@@ -15,7 +15,7 @@ import { CreateDescriptionDto } from './dto/create-description.dto';
 import { UpdateDescriptionDto } from './dto/update-description.dto';
 
 @Controller('description')
-@ApiTags("Description")
+@ApiTags('Description')
 export class DescriptionController {
   constructor(private readonly descriptionService: DescriptionService) {}
 
@@ -76,7 +76,7 @@ export class DescriptionController {
           type: 'string',
           default: 'we',
         },
-        
+
         img: {
           type: 'string',
           default: 'we',
@@ -99,6 +99,70 @@ export class DescriptionController {
   }
 
   @Patch(':id')
+  @HttpCode(HttpStatus.NO_CONTENT)
+  @ApiBody({
+    schema: {
+      type: 'object',
+      properties: {
+        category_uz: {
+          type: 'string',
+          default: 'dsfsgf',
+        },
+        category_ru: {
+          type: 'string',
+          default: 'we',
+        },
+        category_en: {
+          type: 'string',
+          default: 'we',
+        },
+        title_uz: {
+          type: 'string',
+          format: 'binary',
+          default: 'dsfsgf',
+        },
+        title_ru: {
+          type: 'string',
+          default: 'we',
+        },
+        title_en: {
+          type: 'string',
+          default: 'we',
+        },
+        description_uz: {
+          type: 'string',
+          format: 'binary',
+          default: 'dsfsgf',
+        },
+        description_ru: {
+          type: 'string',
+          default: 'we',
+        },
+        description_en: {
+          type: 'string',
+          default: 'we',
+        },
+        month: {
+          type: 'string',
+          format: 'binary',
+          default: 'dsfsgf',
+        },
+        day: {
+          type: 'string',
+          default: 'we',
+        },
+        date: {
+          type: 'string',
+          default: 'we',
+        },
+
+        img: {
+          type: 'string',
+          default: 'we',
+        },
+      },
+    },
+  })
   update(
     @Param('id') id: string,
     @Body() updateDescriptionDto: UpdateDescriptionDto,

@@ -6,16 +6,36 @@ import {
   Patch,
   Param,
   Delete,
+  HttpStatus,
+  HttpCode,
 } from '@nestjs/common';
 import { ConnectionService } from './connection.service';
 import { CreateConnectionDto } from './dto/create-connection.dto';
 import { UpdateConnectionDto } from './dto/update-connection.dto';
+import { ApiBody, ApiTags } from '@nestjs/swagger';
 
 @Controller('connection')
+@ApiTags('Connection')
 export class ConnectionController {
   constructor(private readonly connectionService: ConnectionService) {}
 
   @Post()
+  @HttpCode(HttpStatus.CREATED)
+  @ApiBody({
+    schema: {
+      type: 'object',
+      properties: {
+        name: {
+          type: 'string',
+          default: 'qwerty',
+        },
+        number: {
+          type: 'string',
+          default: 'qwerty',
+        },
+      },
+    },
+  })
   create(@Body() createConnectionDto: CreateConnectionDto) {
     return this.connectionService.create(createConnectionDto);
   }
@@ -31,6 +51,22 @@ export class ConnectionController {
   }
 
   @Patch(':id')
+  @HttpCode(HttpStatus.NO_CONTENT)
+  @ApiBody({
+    schema: {
+      type: 'object',
+      properties: {
+        name: {
+          type: 'string',
+          default: '1212',
+        },
+        number: {
+          type: 'string',
+          default: '1212',
+        },
+      },
+    },
+  })
   update(
     @Param('id') id: string,
     @Body() updateConnectionDto: UpdateConnectionDto,
